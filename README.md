@@ -46,9 +46,13 @@ binsh:
 ```
 
 `gcc -nostdlib -static shellcode.s -o shellcode-elf`
+
 `objdump -M intel -o shellcode.elf`
+
 `objcopy --dump-section .text=shellcode-raw shellcode-elf`
+
 `hd shellcode-raw`
+
 `(cat shellcode-raw; cat) | ./bin`
 
 ### shellcode loader (JIT)
